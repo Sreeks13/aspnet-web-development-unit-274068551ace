@@ -1,12 +1,13 @@
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoWeb.Api
 {
-    public class IncidentsApiController : ApiController
+    [ApiController]
+    [Route("api/incidents")]
+    public class IncidentsApiController : ControllerBase
     {
         [HttpGet]
-        [Route("api/incidents")]
-        public IHttpActionResult Get()
+        public IActionResult Get()
         {
             var incidents = new[]
             {
